@@ -1,0 +1,46 @@
+FORMAT: 1A
+HOST: http://apiplatformcloudse-gseapicsbuleprinta-bkm6zgks.srv.ravcloud.com:8001/InsertChqDetails
+
+# CHEQUE - INSERT RECORD
+These APIs uses the VOICE of an individual for alternate authentication in banking applications.
+
+## INSERT CHEQUE RECORD [/]
+
+For cheque record Insertion the cheque image is given as binary input in the body, along
+with some non nullable inputs in the header viz: TEAM_ID , CHEQUE_NO and MIME_TYPE. 
+The captured data is stored in database. The cheque number should be of 6 digits. 
+The cheque image input should be an image type, the format of which should be mentioned
+in MIME type. If details are captured and stored in database successfully, a response 
+success status should be generated. If error occurs then appropriate error message will be generated. 
+
+
+
+### Insert [POST]
+
++ Request (multipart/form-data; boundary=---BOUNDARY)
+    + Headers
+
+            api-key: ''
+            TEAM_ID: ''
+            CHQ_NUM: '' 
+            MIME_TYPE: ''
+            AMOUNT_WORDS: ''
+            AMOUNT_DIGIT: ''
+            CHQ_DATE: ''
+            MICR_CODE: ''
+            ACT_TYPE: ''
+            SAN_NO: ''
+            BEN_NAME: ''
+            PAYEE_AC_NO: ''
+            AMT_MATCH: ''
+            CHQ_STALE: ''
+            ENCODING: ''
+            IMG_SIZE: ''
+            
+    + Body
+
++ Response 200 (application/json)
+
+        {
+            "RESPONSE_STATUS": "success"
+        }
